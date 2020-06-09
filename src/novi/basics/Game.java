@@ -12,6 +12,8 @@ public class Game {
     private Player player2;
     private Player activePlayer;
 
+    boolean keepPlaying;
+
     public Game(Player player1, Player player2) {
 
         board = new Field[9];
@@ -26,6 +28,8 @@ public class Game {
 
         drawCount = 0;
         this.activePlayer = player1;
+
+        this.keepPlaying = true;
     }
 
     public void play() {
@@ -177,7 +181,7 @@ public class Game {
             Game newGame = new Game(player1, player2);
             newGame.play();
         } else if (playerChoice.equals("3")) {
-
+            this.keepPlaying = false;
         }
     }
     }

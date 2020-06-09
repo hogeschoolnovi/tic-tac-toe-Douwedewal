@@ -22,6 +22,9 @@ public class Main {
 
         Game game = new Game(player1, player2);
         game.play();
-        game.showMenu(game);
+
+        while(game.keepPlaying) {
+            game.showMenu(game);
+        }
     }
 }
